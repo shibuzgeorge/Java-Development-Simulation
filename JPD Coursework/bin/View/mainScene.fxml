@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorP" prefHeight="756.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutY="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#uploadFIle" text="Load File" />
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#clearGrid" text="Clear Grid" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#AboutUs" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.6935991605456453" layoutX="177.0" layoutY="115.0" prefHeight="656.0" prefWidth="955.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0">
+        <items>
+          <AnchorPane fx:id="anchor2" minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="452.0">
+           <children>
+                  <Label fx:id="gridSize" alignment="CENTER" layoutY="-3.0" prefHeight="33.0" prefWidth="644.0" text="Simulator (Size)" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="SF Pro Display Black" size="29.0" />
+                     </font>
+                  
+                  </Label>
+                  <GridPane fx:id="theGrid" alignment="CENTER" layoutX="17.0" layoutY="95.0" prefHeight="672.0" prefWidth="624.0" AnchorPane.bottomAnchor="192.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="95.0">
+                     
+                  </GridPane>
+                  <VBox layoutX="-1.0" layoutY="87.0" prefHeight="872.0" prefWidth="658.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="87.0">
+                     <children>
+                        <HBox fx:id="hBox" alignment="BOTTOM_CENTER" centerShape="false" focusTraversable="true" layoutX="11.0" layoutY="389.0" prefHeight="836.0" prefWidth="618.0" AnchorPane.bottomAnchor="127.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="87.0">
+                           <children>
+                              <Button layoutX="180.0" layoutY="609.0" mnemonicParsing="false" onAction="#Simulate" style="-fx-background-color: #24dd21;" text="Run Simulator" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Separator prefHeight="6.0" prefWidth="676.0" style="-fx-background-color: black;" />
+                        <AnchorPane focusTraversable="true" prefHeight="55.0" prefWidth="512.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <HBox layoutX="41.0" layoutY="39.0" prefHeight="38.0" prefWidth="510.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="39.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" layoutX="41.0" layoutY="42.0" prefHeight="25.0" prefWidth="45.0" text="Width" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="42.0" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Slider fx:id="widthSliders" blockIncrement="1.0" layoutX="92.0" layoutY="47.0" majorTickUnit="5.0" max="20.0" minorTickCount="5" onMouseDragged="#sliderSize" onMouseReleased="#autoResize" prefHeight="37.0" prefWidth="131.0" showTickLabels="true" showTickMarks="true" HBox.hgrow="ALWAYS">
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Slider>
+                                    <Label alignment="CENTER_RIGHT" layoutX="258.0" layoutY="40.0" prefHeight="25.0" prefWidth="108.0" text="Charging Level" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="258.0" AnchorPane.topAnchor="40.0" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Slider fx:id="ChargeLevel" layoutX="372.0" layoutY="40.0" majorTickUnit="10.0" min="10.0" onMouseDragged="#chargingSlide" prefHeight="37.0" prefWidth="124.0" showTickLabels="true" showTickMarks="true" HBox.hgrow="ALWAYS">
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                    </Slider>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="31.0" layoutY="74.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="74.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" layoutX="31.0" layoutY="77.0" prefHeight="25.0" prefWidth="49.0" text="Height" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="77.0" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Slider fx:id="heightSliders" blockIncrement="1.0" layoutX="92.0" layoutY="83.0" majorTickUnit="5.0" max="20.0" minorTickCount="5" onMouseDragged="#sliderSize" onMouseReleased="#autoResize" showTickLabels="true" showTickMarks="true" HBox.hgrow="ALWAYS">
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                    </Slider>
+                                    <Label alignment="CENTER_RIGHT" layoutX="232.0" layoutY="75.0" prefHeight="25.0" prefWidth="114.0" text="Charging Speed" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="232.0" AnchorPane.topAnchor="75.0" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Slider fx:id="ChargeSpeed" layoutX="372.0" layoutY="75.0" majorTickUnit="1.0" max="5.0" min="1.0" onMouseDragged="#chargingSlide" showTickLabels="true" showTickMarks="true" HBox.hgrow="ALWAYS">
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                    </Slider>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="30.0" layoutY="11.0" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="30.0" layoutY="11.0" prefHeight="25.0" prefWidth="331.0" text="Change Grid Width &amp; Height" underline="true" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="392.0" AnchorPane.topAnchor="11.0" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="266.0" layoutY="11.0" prefHeight="26.0" prefWidth="328.0" text="Change Charging Level &amp; Speed" underline="true" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="156.0" AnchorPane.topAnchor="11.0" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <Label fx:id="ChargingL" alignment="CENTER" layoutY="32.0" text="Charging Level: " AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ChargingS" alignment="CENTER" layoutY="49.0" text="Charging Speed:" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+                     </AnchorPane>
+            <ScrollPane fx:id="scrollPane" fitToWidth="true" minHeight="0.0" minWidth="280.0" prefHeight="1219.0" prefViewportHeight="801.0" prefViewportWidth="312.0" prefWidth="303.0" SplitPane.resizableWithParent="false">
+               <content>
+          <AnchorPane fx:id="sidePane" focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="810.0" prefWidth="289.0" SplitPane.resizableWithParent="false">
+           <children>
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="177.0" prefHeight="26.0" prefWidth="273.0" text="Robots">
+                           <font>
+                              <Font name="SF Pro Display Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="RobotID" layoutX="80.0" layoutY="203.0" />
+                        <TextField fx:id="RobotX" layoutX="81.0" layoutY="238.0" />
+                        <TextField fx:id="RobotY" layoutX="81.0" layoutY="272.0" />
+                        <Label alignment="CENTER" layoutX="9.0" layoutY="207.0" prefHeight="17.0" prefWidth="60.0" text="Robot ID" />
+                        <Label alignment="CENTER" layoutX="15.0" layoutY="228.0" prefHeight="37.0" prefWidth="62.0" text="Robot X Coordinate" wrapText="true" />
+                        <Label alignment="CENTER" layoutX="15.0" layoutY="265.0" prefHeight="38.0" prefWidth="63.0" text="Robot Y Coordinate" wrapText="true" />
+                        <Button layoutX="31.0" layoutY="311.0" mnemonicParsing="false" onAction="#addRobot" text="Add Robot" />
+                        <Button layoutX="170.0" layoutY="311.0" mnemonicParsing="false" onAction="#removeRobot" text="Remove Robot" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="353.0" prefHeight="27.0" prefWidth="273.0" text="Storage Shelf" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="18.0" layoutY="389.0" prefHeight="17.0" prefWidth="49.0" text="Shelf ID" />
+                        <TextField fx:id="ShelfID" layoutX="84.0" layoutY="385.0" prefHeight="25.0" prefWidth="149.0" />
+                        <Label alignment="CENTER" layoutX="8.0" layoutY="160.0" prefHeight="17.0" prefWidth="273.0" text="*****" />
+                        <Label alignment="CENTER" layoutX="21.0" layoutY="410.0" prefHeight="38.0" prefWidth="62.0" text="Shelf X Coordinate" wrapText="true" />
+                        <TextField fx:id="ShelfX" layoutX="84.0" layoutY="420.0" prefHeight="25.0" prefWidth="149.0" />
+                        <Label alignment="CENTER" layoutX="21.0" layoutY="448.0" prefHeight="37.0" prefWidth="61.0" text="Shelf Y Coordinate" wrapText="true" />
+                        <TextField fx:id="ShelfY" layoutX="84.0" layoutY="457.0" prefHeight="25.0" prefWidth="149.0" />
+                        <Button layoutX="39.0" layoutY="495.0" mnemonicParsing="false" onAction="#addShelf" text="Add Shelf" />
+                        <Button layoutX="177.0" layoutY="495.0" mnemonicParsing="false" onAction="#removeShelf" text="Remove Shelf" />
+                        <Button layoutX="169.0" layoutY="700.0" mnemonicParsing="false" onAction="#removeStation" text="Remove Station" />
+                        <Button layoutX="28.0" layoutY="700.0" mnemonicParsing="false" onAction="#addStation" text="Add Station" />
+                        <TextField fx:id="StationY" layoutX="83.0" layoutY="659.0" prefHeight="25.0" prefWidth="149.0" />
+                        <Label alignment="CENTER" layoutX="20.0" layoutY="652.0" prefHeight="38.0" prefWidth="61.0" text="Station Y Coordinate" wrapText="true" />
+                        <TextField fx:id="StationX" layoutX="82.0" layoutY="621.0" prefHeight="25.0" prefWidth="149.0" />
+                        <Label alignment="CENTER" layoutX="20.0" layoutY="615.0" prefHeight="37.0" prefWidth="62.0" text="Station X Coordinate" wrapText="true" />
+                        <Label alignment="CENTER" layoutX="8.0" layoutY="344.0" prefHeight="17.0" prefWidth="273.0" text="*****" />
+                        <TextField fx:id="StationID" layoutX="81.0" layoutY="586.0" prefHeight="25.0" prefWidth="149.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="554.0" prefHeight="27.0" prefWidth="273.0" text="Package Station" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="15.0" layoutY="590.0" prefHeight="17.0" prefWidth="58.0" text="Station ID" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="10.0" prefHeight="27.0" prefWidth="273.0" text="Orders" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="orderGenerated" layoutX="15.0" layoutY="69.0" prefHeight="79.0" prefWidth="251.0" />
+                        <TextField fx:id="theSeed" layoutX="16.0" layoutY="37.0" prefHeight="25.0" prefWidth="143.0" />
+                        <Label alignment="CENTER" layoutX="8.0" layoutY="529.0" prefHeight="17.0" prefWidth="273.0" text="*****" />
+                        <Button layoutX="168.0" layoutY="37.0" mnemonicParsing="false" onAction="#generateOrder" prefHeight="25.0" prefWidth="97.0" text="Generate" />
+                     </children>
+          </AnchorPane>
+               </content>
+            </ScrollPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="232.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="191.0" prefWidth="370.0" style="-fx-background-color: #b5e8ff;" VBox.vgrow="ALWAYS">
+         <children>
+            <Text layoutX="55.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Us" textAlignment="CENTER" wrappingWidth="268.13671875">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Text>
+            <Text fontSmoothingType="LCD" layoutX="92.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Robot Simulation © 2018 ">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="50.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Created by Daniel Ahmed, Azhar Zaman, Arun Bahra, Shibu George, Rajan Malhi and Gavinder Hayer" textAlignment="CENTER" wrappingWidth="278.927734375">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="379.0" style="-fx-background-color: #a7f4a1;" VBox.vgrow="ALWAYS">
+         <children>
+           <Button fx:id="closeButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#close" prefHeight="32.0" prefWidth="50.0" text="Close" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
